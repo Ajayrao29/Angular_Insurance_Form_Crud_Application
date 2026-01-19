@@ -1,0 +1,390 @@
+/* ===== Global Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #F8F9FA;
+  color: #2C3E50;
+  line-height: 1.6;
+}
+
+/* ===== Modern Brand Colors ===== */
+:root {
+  --primary-color: #1E88E5;
+  --primary-dark: #1565C0;
+  --primary-light: #42A5F5;
+  --secondary-color: #7C4DFF;
+  --secondary-dark: #5E35B1;
+  --accent-color: #FF6B6B;
+  --success-color: #26A69A;
+  --warning-color: #FFA726;
+  --danger-color: #EF5350;
+  --dark-gray: #2C3E50;
+  --light-gray: #ECF0F1;
+  --bg-color: #F8F9FA;
+}
+
+/* ===== Bootstrap Customization with Modern Colors ===== */
+:root {
+  --bs-primary: #1E88E5;
+  --bs-secondary: #7C4DFF;
+  --bs-info: #42A5F5;
+  --bs-success: #26A69A;
+  --bs-danger: #EF5350;
+  --bs-warning: #FFA726;
+}
+
+/* ===== Scrollbar Styling ===== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #1E88E5 0%, #7C4DFF 100%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #1565C0 0%, #5E35B1 100%);
+}
+
+/* ===== Utility Classes ===== */
+.container-fluid {
+  max-width: 100%;
+}
+
+.shadow {
+  box-shadow: 0 8px 24px rgba(30, 136, 229, 0.12) !important;
+}
+
+.text-primary {
+  color: #1E88E5 !important;
+}
+
+.text-success {
+  color: #26A69A !important;
+}
+
+.text-danger {
+  color: #EF5350 !important;
+}
+
+/* ===== Transitions ===== */
+a,
+button {
+  transition: all 0.3s ease;
+}
+
+/* ===== Form Elements ===== */
+.form-control,
+.form-select {
+  border-radius: 8px;
+  border: 2px solid #ECF0F1;
+  font-size: 0.95rem;
+  padding: 0.75rem 1rem;
+  transition: all 0.3s ease;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #1E88E5;
+  box-shadow: 0 0 0 0.4rem rgba(30, 136, 229, 0.15), 0 2px 8px rgba(30, 136, 229, 0.2);
+  background-color: #FFFFFF;
+}
+
+.form-label {
+  font-weight: 600;
+  color: #2C3E50;
+  margin-bottom: 0.6rem;
+  font-size: 0.95rem;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 0.7rem 1.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+}
+
+.btn-primary {
+  background-color: #003DA5;
+  border-color: #003DA5;
+}
+
+.btn-primary:hover {
+  background-color: #002D5C;
+  border-color: #002D5C;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 61, 165, 0.3);
+}
+
+.btn-secondary {
+  background-color: #00A651;
+  border-color: #00A651;
+}
+
+.btn-secondary:hover {
+  background-color: #008C42;
+  border-color: #008C42;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 166, 81, 0.3);
+}
+
+.btn-warning {
+  background-color: #FFA500;
+  border-color: #FFA500;
+  color: #fff;
+}
+
+.btn-warning:hover {
+  background-color: #ff8c00;
+  border-color: #ff8c00;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 165, 0, 0.3);
+}
+
+.btn-danger {
+  background-color: #D32F2F;
+  border-color: #D32F2F;
+}
+
+.btn-danger:hover {
+  background-color: #C62828;
+  border-color: #C62828;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(211, 47, 47, 0.3);
+}
+
+.btn-info {
+  background-color: #4A9FD8;
+  border-color: #4A9FD8;
+}
+
+.btn-info:hover {
+  background-color: #2E7BA8;
+  border-color: #2E7BA8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(74, 159, 216, 0.3);
+}
+
+/* ===== Cards ===== */
+.card {
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 61, 165, 0.08);
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #003DA5;
+}
+
+.card-header {
+  border-radius: 8px 8px 0 0;
+  border: none;
+  padding: 1.25rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #003DA5 0%, #4A9FD8 100%);
+  color: white;
+}
+
+/* ===== Tables ===== */
+.table {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #f0f7ff;
+  transition: background-color 0.2s ease;
+}
+
+.table-primary {
+  background-color: #e8f0ff !important;
+}
+
+.table-primary th {
+  background: linear-gradient(135deg, #003DA5 0%, #4A9FD8 100%);
+  color: white;
+  border: none;
+  font-weight: 600;
+}
+
+/* ===== Badges ===== */
+.badge {
+  padding: 0.35rem 0.65rem;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+.badge-success {
+  background-color: #00A651;
+  color: white;
+}
+
+.badge-danger {
+  background-color: #D32F2F;
+  color: white;
+}
+
+.badge-warning {
+  background-color: #FFA500;
+  color: #000;
+}
+
+/* ===== Alerts ===== */
+.alert {
+  border-radius: 6px;
+  border: none;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid;
+}
+
+.alert-success {
+  background-color: #e8f5e9;
+  color: #00A651;
+  border-color: #00A651;
+}
+
+.alert-danger {
+  background-color: #ffebee;
+  color: #D32F2F;
+  border-color: #D32F2F;
+}
+
+.alert-warning {
+  background-color: #fff3e0;
+  color: #F57C00;
+  border-color: #FFA500;
+}
+
+.alert-info {
+  background-color: #e1f5fe;
+  color: #4A9FD8;
+  border-color: #4A9FD8;
+}
+
+/* ===== Spinners ===== */
+.spinner-border {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-width: 0.3em;
+  color: #003DA5;
+}
+
+.spinner-border-sm {
+  border-color: #003DA5 !important;
+}
+
+/* ===== Navbar (Hartford Blue) ===== */
+.navbar-dark {
+  background-color: #003DA5 !important;
+  box-shadow: 0 2px 8px rgba(0, 61, 165, 0.2);
+}
+
+.navbar-dark .navbar-brand {
+  color: #fff !important;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.navbar-dark .nav-link {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.navbar-dark .nav-link:hover {
+  color: #fff !important;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.navbar-dark .nav-link.active {
+  color: #fff !important;
+  border-bottom: 3px solid #00A651;
+  padding-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+/* ===== Links ===== */
+a {
+  color: #003DA5;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #002D5C;
+  text-decoration: underline;
+}
+
+/* ===== Responsive Utilities ===== */
+@media (max-width: 768px) {
+  .container-fluid {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .card {
+    margin-bottom: 1rem;
+  }
+
+  .btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .btn-group .btn {
+    width: 100%;
+  }
+
+  .table {
+    font-size: 0.85rem;
+  }
+}
+
+/* ===== Animation ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* ===== Hartford Green Accent ===== */
+.accent-green {
+  color: #00A651;
+}
+
+.border-green {
+  border-left: 4px solid #00A651 !important;
+}
+
+.bg-green-light {
+  background-color: #f0f7f3 !important;
+}

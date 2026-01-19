@@ -1,0 +1,108 @@
+.form-label {
+  font-weight: 600;
+  color: #7C4DFF;
+  margin-bottom: 0.6rem;
+}
+
+.text-danger {
+  color: #EF5350;
+}
+
+.card {
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border: none;
+  box-shadow: 0 4px 16px rgba(124, 77, 255, 0.08);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: 0 8px 24px rgba(124, 77, 255, 0.12);
+  transform: translateY(-2px);
+}
+
+.card-header {
+  border-radius: 12px 12px 0 0;
+  padding: 1.5rem 1.5rem;
+  background: linear-gradient(135deg, #7C4DFF 0%, #9C27B0 100%);
+  color: white;
+  border: none;
+  font-weight: 600;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #7C4DFF;
+  box-shadow: 0 0 0 0.4rem rgba(124, 77, 255, 0.15), 0 2px 8px rgba(124, 77, 255, 0.2);
+}
+
+.is-invalid {
+  border-color: #EF5350 !important;
+}
+
+.invalid-feedback {
+  color: #EF5350;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  font-weight: 500;
+}
+
+.btn {
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-info {
+  background: linear-gradient(135deg, #7C4DFF 0%, #9C27B0 100%);
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-info:hover {
+  background: linear-gradient(135deg, #5E35B1 0%, #7C4DFF 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(124, 77, 255, 0.3);
+  color: white;
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #ECF0F1 0%, #BDC3C7 100%);
+  border: none;
+  color: #2C3E50;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, #BDC3C7 0%, #95A5A6 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  color: #2C3E50;
+}
+
+.alert {
+  border-radius: 6px;
+  border: none;
+  border-left: 4px solid;
+}
+
+.alert-success {
+  background-color: #e8f5e9;
+  color: #00A651;
+  border-color: #00A651;
+}
+
+.alert-danger {
+  background-color: #ffebee;
+  color: #D32F2F;
+  border-color: #D32F2F;
+}
+
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+  color: #4A9FD8;
+}

@@ -1,0 +1,15 @@
+{
+  "insurances": [
+    {
+      "holderName": "Abhi",
+      "dateOfBirth": "2005-01-18",
+      "policyType": "Travel",
+      "premium": 50000,
+      "startDate": "2026-01-20",
+      "endDate": "2026-01-31",
+      "nominee": "Arnav",
+      "status": "Active",
+      "id": "1"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Build artifacts
+dist/
+out-tsc/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-workspace
+
+# Angular
+.angular/
+.angular-ide
+
+# Environment files
+.env
+.env.local
+
+# Misc
+.cache/
+temp/
+tmp/

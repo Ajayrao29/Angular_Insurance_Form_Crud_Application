@@ -1,0 +1,171 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="card shadow">
+        <div class="card-header bg-info text-white">
+          <h3 class="mb-0">Update Insurance</h3>
+        </div>
+        <div class="card-body">
+          <!-- Loading State -->
+          <div *ngIf="loading" class="text-center">
+            <div class="spinner-border text-primary" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+            <p class="mt-3">Loading insurance details...</p>
+          </div>
+
+          <!-- Success Message -->
+          <div *ngIf="successMessage" class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ successMessage }}
+            <button type="button" class="btn-close" (click)="successMessage = ''"></button>
+          </div>
+
+          <!-- Error Message -->
+          <div *ngIf="errorMessage" class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{ errorMessage }}
+            <button type="button" class="btn-close" (click)="errorMessage = ''"></button>
+          </div>
+
+          <!-- Form -->
+          <form *ngIf="!loading" [formGroup]="insuranceForm" (ngSubmit)="onSubmit()">
+            <!-- Holder Name -->
+            <div class="mb-3">
+              <label for="holderName" class="form-label">Holder Name <span class="text-danger">*</span></label>
+              <input
+                type="text"
+                class="form-control"
+                [class.is-invalid]="submitted && f['holderName'].errors"
+                id="holderName"
+                formControlName="holderName"
+                placeholder="Enter holder name">
+              <div *ngIf="submitted && f['holderName'].errors" class="invalid-feedback d-block">
+                <div *ngIf="f['holderName'].errors['required']">Holder name is required</div>
+                <div *ngIf="f['holderName'].errors['minlength']">Holder name must be at least 3 characters</div>
+              </div>
+            </div>
+
+            <!-- Date of Birth -->
+            <div class="mb-3">
+              <label for="dateOfBirth" class="form-label">Date of Birth <span class="text-danger">*</span></label>
+              <input
+                type="date"
+                class="form-control"
+                [class.is-invalid]="submitted && f['dateOfBirth'].errors"
+                id="dateOfBirth"
+                formControlName="dateOfBirth">
+              <small class="form-text text-muted">Used to generate policy number</small>
+              <div *ngIf="submitted && f['dateOfBirth'].errors" class="invalid-feedback d-block">
+                Date of birth is required
+              </div>
+            </div>
+
+            <!-- Policy Type -->
+            <div class="mb-3">
+              <label for="policyType" class="form-label">Policy Type <span class="text-danger">*</span></label>
+              <select
+                class="form-select"
+                [class.is-invalid]="submitted && f['policyType'].errors"
+                id="policyType"
+                formControlName="policyType">
+                <option value="">Select policy type</option>
+                <option *ngFor="let type of policyTypes" [value]="type">{{ type }}</option>
+              </select>
+              <div *ngIf="submitted && f['policyType'].errors" class="invalid-feedback d-block">
+                Policy type is required
+              </div>
+            </div>
+
+            <!-- Premium -->
+            <div class="mb-3">
+              <label for="premium" class="form-label">Premium <span class="text-danger">*</span></label>
+              <input
+                type="number"
+                class="form-control"
+                [class.is-invalid]="submitted && f['premium'].errors"
+                id="premium"
+                formControlName="premium"
+                placeholder="Enter premium amount"
+                step="0.01">
+              <div *ngIf="submitted && f['premium'].errors" class="invalid-feedback d-block">
+                <div *ngIf="f['premium'].errors['required']">Premium is required</div>
+                <div *ngIf="f['premium'].errors['min']">Premium must be greater than 0</div>
+              </div>
+            </div>
+
+            <!-- Start Date -->
+            <div class="mb-3">
+              <label for="startDate" class="form-label">Start Date <span class="text-danger">*</span></label>
+              <input
+                type="date"
+                class="form-control"
+                [class.is-invalid]="submitted && f['startDate'].errors"
+                id="startDate"
+                formControlName="startDate">
+              <div *ngIf="submitted && f['startDate'].errors" class="invalid-feedback d-block">
+                Start date is required
+              </div>
+            </div>
+
+            <!-- End Date -->
+            <div class="mb-3">
+              <label for="endDate" class="form-label">End Date <span class="text-danger">*</span></label>
+              <input
+                type="date"
+                class="form-control"
+                [class.is-invalid]="submitted && (f['endDate'].errors || insuranceForm.errors?.['dateInvalid'])"
+                id="endDate"
+                formControlName="endDate">
+              <div *ngIf="submitted && f['endDate'].errors" class="invalid-feedback d-block">
+                End date is required
+              </div>
+              <div *ngIf="submitted && insuranceForm.errors?.['dateInvalid']" class="invalid-feedback d-block">
+                End date must be after start date
+              </div>
+            </div>
+
+            <!-- Nominee -->
+            <div class="mb-3">
+              <label for="nominee" class="form-label">Nominee Name <span class="text-danger">*</span></label>
+              <input
+                type="text"
+                class="form-control"
+                [class.is-invalid]="submitted && f['nominee'].errors"
+                id="nominee"
+                formControlName="nominee"
+                placeholder="Enter nominee name">
+              <div *ngIf="submitted && f['nominee'].errors" class="invalid-feedback d-block">
+                <div *ngIf="f['nominee'].errors['required']">Nominee name is required</div>
+                <div *ngIf="f['nominee'].errors['minlength']">Nominee name must be at least 3 characters</div>
+              </div>
+            </div>
+
+            <!-- Status -->
+            <div class="mb-3">
+              <label for="status" class="form-label">Status <span class="text-danger">*</span></label>
+              <select
+                class="form-select"
+                [class.is-invalid]="submitted && f['status'].errors"
+                id="status"
+                formControlName="status">
+                <option *ngFor="let status of statusOptions" [value]="status">{{ status }}</option>
+              </select>
+              <div *ngIf="submitted && f['status'].errors" class="invalid-feedback d-block">
+                Status is required
+              </div>
+            </div>
+
+            <!-- Buttons -->
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <button type="button" class="btn btn-secondary" (click)="cancel()">
+                <i class="bi bi-x-circle"></i> Cancel
+              </button>
+              <button type="submit" class="btn btn-info text-white">
+                <i class="bi bi-check-circle"></i> Update Insurance
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
